@@ -13,15 +13,18 @@
     <td>Description</td>
     <td>Price</td>
 </th>
-{% for productsin products%} 
+{% for product in products%} 
 <tr>
     <td>{{product.name}}</td>
     <td>{{product.description}}</td>
 
     <td>{{product.price}}</td>
-    <td><a href="{%url products_details id=product.id%}"> View product</a></td>
+    <td><a href="{%url products_details id=product.id}"> View product</a></td>
+    <td><a href="{%url products_edit id=product.id}"> Edit product</a></td> 
+   
     
-</tr>
+    
+</tr>details/<int:id>
 {% endfor %}
 
 </table>
