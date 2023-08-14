@@ -12,12 +12,12 @@ def upload_cart(request):
             form.save()
     else:
         form = CartUploadForm()
-    return render(request,"Cart/cart_upload.html",{"form":form})
+    return render(request,"cart/cart_upload.html",{"form":form})
 
 def cart_list(request):
-    cart= Cart.objects.all()
-    return render(request, 'Cart/cart_list.html', {'cart': cart})
+    carts= Cart.objects.all()
+    return render(request, 'cart/cart_list.html', {'carts': carts})
 
 def cart_details_view(request,id):
     cart=Cart.objects.get(id=id)
-    return render(request, 'Cart/cart_details.html', {'cart': cart})
+    return render(request, 'cart/cart_details.html', {'cart': cart})

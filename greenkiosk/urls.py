@@ -22,8 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("inventory/",include("inventory.urls")),
     path("customer/",include("customer.urls")),
+    path("cart/",include("cart.urls")),
+    path("category/",include("category.urls")),
+    path("order/",include("order.urls")),
+    path("payment/",include("payment.urls")),
+  
+    
 ]
-# from django.urls import path, include
-# urlpatterns = [
-#  path("customer/",include("customer.urls")),
-#   ]

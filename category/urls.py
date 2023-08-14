@@ -11,3 +11,7 @@ urlpatterns = [
     path("category_/list/", category_list, name= "category__list"),
     path("category_/<int:id>/",category_details_view,name="category__details_view")
 ]
+
+
+
+

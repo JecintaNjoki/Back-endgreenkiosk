@@ -7,7 +7,7 @@ from .views import cart_details_view
 # ]
 
 urlpatterns = [
-    path("cart_/upload/", upload_cart, name= "upload_cart_"),
-    path("cart_/list/", cart_list, name= "cart__list"),
-    path("cart_/<int:id>/",cart_details_view,name="cart__details_view")
+    path("cart/upload/", upload_cart, name= "upload_cart_"),
+    path("cart/list/", cart_list, name= "cart_list"),
+    path("cart/<int:id>/",cart_details_view,name="cart_details_view")
 ]
