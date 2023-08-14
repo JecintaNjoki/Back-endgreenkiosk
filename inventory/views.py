@@ -7,7 +7,7 @@ from .forms import Products
 def upload_product(request):
     form = ProductUploadForm()
     return render(request, 'inventory/product_upload.html', {'form': form})
-
+    
 def products_list(request):
     products= Products.objects.all()
     return render(request, 'inventory/product_list.html', {'products': products})

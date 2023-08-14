@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <h3>Payment List</h3>
+ <table> 
+    <th>
+    <td>Date</td>
+    <td>Balance</td>
+    
+</th>
+{% for payment in payments%} 
+<tr>
+    <td>{{payment.date}}</td>
+    <td>{{payment.balance}}</td>
+    
+    
+    <td><a href="{%url payment_details id=payment.id}"> View payment</a></td>
+    <td><a href="{%url payment_edit id=payment.id}"> Edit payment</a></td> 
+   
+    
+    
+</tr>details/<int:id>
+{% endfor %}
+
+</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <h3>Cart List</h3>
+ <table> 
+    <th>
+    <td>Name</td>
+    <td>Price</td>
+    <td>total_amount</td>
+    
+</th>
+{% for cart in carts%} 
+<tr>
+    <td>{{cart.name}}</td>
+    <td>{{cart.price}}</td>
+    <td>{{cart.total_amount}}</td>
+
+    <td><a href="{%url cart_details id=cart.id}"> View cart</a></td>
+    <td><a href="{%urlcart_edit id=cart.id}"> Edit cart</a></td> 
+   
+    
+    
+</tr>details/<int:id>
+{% endfor %}
+
+</table>

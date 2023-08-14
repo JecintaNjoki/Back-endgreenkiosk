@@ -2,12 +2,12 @@ from django.db import models
 from payment.models import Payment
 from inventory.models import Products
 from customer.models import Customer
-from cart.models import Cart 
+# from cart.models import Cart 
 
 # Create your models here.
 class Order(models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.CASCADE,null=True)
-    cart=models.ForeignKey(Cart,on_delete=models.CASCADE,null=True)
+    # cart=models.ForeignKey(Cart,on_delete=models.CASCADE,null=True)
     product=models.ForeignKey(Products,on_delete=models.CASCADE,null=True)
     payment=models.ForeignKey(Payment,on_delete=models.CASCADE,null=True)
     # shipment=models.ForeignKey(Shipment,on_delete=models.CASCADE,null=True)
