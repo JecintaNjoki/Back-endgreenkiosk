@@ -7,10 +7,8 @@ from customer.models import Customer
 # Create your models here.
 class Order(models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.CASCADE,null=True)
-    # cart=models.ForeignKey(Cart,on_delete=models.CASCADE,null=True)
     product=models.ForeignKey(Products,on_delete=models.CASCADE,null=True)
     payment=models.ForeignKey(Payment,on_delete=models.CASCADE,null=True)
-    # shipment=models.ForeignKey(Shipment,on_delete=models.CASCADE,null=True)
     name=models.CharField(max_length=32)
     customer_name=models.CharField(max_length=32)
     items=models.CharField(max_length=32)

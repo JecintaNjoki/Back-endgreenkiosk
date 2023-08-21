@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <h3>Vendor List</h3>
+ <table> 
+    <th>
+    <td>First_name</td>
+    <td>Last_name</td>
+    <td>Email</td>
+     <td>Password</td> 
+</th>
+{% for vendor in vendor%} 
+<tr>
+    <td>{{vendor.first_name}}</td>
+    <td>{{vendor.email}}</td>
+
+    <!-- <td>{{customer.price}}</td> -->
+    <td><a href="{%url 'vendor_details' id=vendor.id%}"> View vendor</a></td>
+    <td><a href="{% url 'vendor_edit_view'id=vendor.id%}"></a>Edit vendor details</td>
+    
+</tr>
+{% endfor %}
+
+</table>
+</body>
+</html>

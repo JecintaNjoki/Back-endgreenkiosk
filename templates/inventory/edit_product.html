@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-  <img src="{{vendor.image.url}}" alt="vendor image"/> 
-  <h4>{{vendor.title}}</h4> 
-  <p>{{vendor.description}}</p>
-  <!-- <span>{{vendor.price}}</span> -->
-   <button>View vendor</button>
+    <h2>Edit Product</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form> 
 </body>
 </html>

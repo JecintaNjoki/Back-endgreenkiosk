@@ -3,62 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Products List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #F2F2F2;
+        }
+        .product-image {
+            max-width: 100px;
+            max-height: 100px;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
- <h3>Products List</h3>
- <table> 
+    <h3>Products List</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="center">View Product</th>
+            <th class="center">Edit Product</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td><img src="{{ product.image }}" alt="{{ product.name }}" class="product-image"></td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
 
-
-<style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-            h3 {
-                text-align: center;
-                margin-top: 20px;
-            }
-            table {
-                width: 80%;
-                margin: 20px auto;
-                border-collapse: collapse;
-                border: 1px solid #ddd;
-            }
-            th, td {
-                padding: 10px;
-                text-align: left;
-                border-bottom: 1px solid #ddd;
-            }
-            th {
-                background-color: #F2F2F2;
-            }
-            .product_images {
-                max-width: 100px;
-                max-height: 100px;
-            }        </style>
-    <th>
-    <td>Name</td>
-    <td>Image</td>
-    <td>Description</td>
-    <td>Price</td>
-</th>
-{% for product in products%} 
-<tr>
-    <td>{{product.name}}</td>
-    <td>{{product.image}}</td>
-    <td>{{product.description}}</td>
-    <td>{{product.price}}</td>
-    
-    <td><a href="{%url products_details id=product.id}"> View product</a></td>
-    <td><a href="{%url products_edit id=product.id}"> Edit product</a></td> 
-   
-    
-    
-</tr>details/<int:id>
-{% endfor %}
-
-</table>
+            <td class="center"><a href="{% url 'products_details_view' id=product.id %}">View</a></td>
+            <td class="center"><a href="{% url 'edit_product_view' id=product.id %}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
-</html>
+</html> 
+
+
+

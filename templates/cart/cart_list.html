@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #F2F2F2;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
  <h3>Cart List</h3>
@@ -12,6 +40,8 @@
     <td>Name</td>
     <td>Price</td>
     <td>total_amount</td>
+    <td class="center">View Cart</td>
+    <td class="center">Edit Cart</td>
     
 </th>
 {% for cart in carts%} 
@@ -19,9 +49,11 @@
     <td>{{cart.name}}</td>
     <td>{{cart.price}}</td>
     <td>{{cart.total_amount}}</td>
+    <!-- <td>{{cart.View}}</td>
+    <td>{{cart.Edit}}</td> -->
 
-    <td><a href="{%url cart_details id=cart.id}"> View cart</a></td>
-    <td><a href="{%urlcart_edit id=cart.id}"> Edit cart</a></td> 
+    <td class="center"><a href="{%url cart_details id=cart.id}"> View cart</a></td>
+    <td class="center"><a href="{%urlcart_edit id=cart.id}"> Edit cart</a></td> 
    
     
     
